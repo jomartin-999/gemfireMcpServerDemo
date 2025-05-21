@@ -1,10 +1,10 @@
 package com.broadcom.gemfiremcpserverdemo.model;
 
-import java.io.Serializable;
-import java.time.Instant;
 import org.apache.geode.pdx.PdxReader;
 import org.apache.geode.pdx.PdxSerializable;
 import org.apache.geode.pdx.PdxWriter;
+
+import java.time.Instant;
 
 public class FinancialDocumentMetadata implements PdxSerializable {
     private String filename;

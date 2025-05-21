@@ -1,7 +1,7 @@
 package com.broadcom.gemfiremcpserverdemo.service;
 
 
-
+import com.broadcom.gemfiremcpserverdemo.model.FinancialDocumentMetadata;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.geode.cache.Region;
 import org.springframework.ai.document.Document;
@@ -11,7 +11,6 @@ import org.springframework.ai.vectorstore.gemfire.GemFireVectorStore;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Service;
-import com.broadcom.gemfiremcpserverdemo.model.FinancialDocumentMetadata;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,8 +19,10 @@ import java.nio.file.Path;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service

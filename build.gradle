@@ -15,7 +15,6 @@ java {
 
 repositories {
     mavenCentral()
-    maven { url 'https://repo.spring.io/milestone' }
     maven {
         url "https://packages.broadcom.com/artifactory/gemfire/"
         credentials {
@@ -31,7 +30,7 @@ configurations.all {
 
 
 ext {
-    set('springAiVersion', "1.0.0-M8")
+    set('springAiVersion', "1.0.0")
     springBootForGemFireVersion = '2.0.3'
     vmwareGemFireVersion = '10.1.3'
 }
