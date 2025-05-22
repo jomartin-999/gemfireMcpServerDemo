@@ -10,6 +10,7 @@ import org.apache.geode.cache.client.ClientCacheFactory;
 import org.apache.geode.cache.client.ClientRegionShortcut;
 import org.springframework.ai.support.ToolCallbacks;
 import org.springframework.ai.tool.ToolCallback;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +20,9 @@ import java.util.List;
 @SpringBootApplication
 
 public class GemfireMcpServerDemoApplication {
+
+    @Value("${gemfire.region.docsMetadata}")
+    private String financialDocumentsMetadataRegion;
 
     public static void main(String[] args) {
         SpringApplication.run(GemfireMcpServerDemoApplication.class, args);
@@ -41,7 +45,7 @@ public class GemfireMcpServerDemoApplication {
     public Region<String, FinancialDocumentMetadata> financialDocumentMetadataRegion(ClientCache clientCache) {
         return clientCache
                 .<String, FinancialDocumentMetadata>createClientRegionFactory(ClientRegionShortcut.PROXY)
-                .create("FinancialDocumentsMetadata");
+                .create(financialDocumentsMetadataRegion);
     }
 
     @Bean
