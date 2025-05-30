@@ -85,8 +85,8 @@ pip install accelerate
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/GemFireMCPServer.git
-cd GemFireMCPServer
+git clone https://github.com/jomartin-999/gemfireMcpServerDemo.git
+cd gemfireMcpServerDemo
 ```
 
 ### Configure GemFire Artifact Access
